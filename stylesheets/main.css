@@ -22,6 +22,13 @@ nav{
 
 }
 
+.navlink:hover{
+    text-decoration: underline;
+}
+
+.navlink:focus{
+    opacity: .8;
+}
 
 ul {
     padding: 0;
@@ -47,5 +54,31 @@ ul a {
     margin-left: 2rem;
 }
 
+.rank-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.rank-list{
+    font-size: 2rem;
+    opacity: 1;
+}
+
+.rank-list .injured{
+    list-style: none;
+}
 
 
+
+
+#rank-footer{
+    margin: auto;
+    width: 70%; 
+    padding: 50px;
+    word-wrap: break-word;
+}
+
+#rank-footer p{
+    text-align: center;
+    margin-bottom: 1rem;
+}
