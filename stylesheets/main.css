@@ -23,7 +23,9 @@ nav{
 }
 
 .navlink:hover{
+    
     text-decoration: underline;
+    text-decoration-color: rgb(206, 219, 18);
 }
 
 .navlink:focus{
@@ -46,12 +48,17 @@ ul a {
 .content{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .content img{
     width: 100%;
     margin-right: 2rem;
     margin-left: 2rem;
+}
+
+.content h1{
+    text-decoration: underline;
 }
 
 .rank-container{
@@ -71,14 +78,91 @@ ul a {
 
 
 
-#rank-footer{
+.text-box{
     margin: auto;
     width: 70%; 
     padding: 50px;
     word-wrap: break-word;
+    line-height: 2.5rem;
+    word-spacing: 7px;
+    
 }
 
-#rank-footer p{
+.text-box p{
     text-align: center;
     margin-bottom: 1rem;
+    font-size: larger;
+    
+}
+
+
+
+
+form{
+    background:white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 600px;
+    border: 1px solid;
+    border-radius: 10px;
+    text-align: center;
+    
+}
+
+form h3{
+    color: black;
+    font-size:larger;
+    margin-bottom: 20px;
+    
+}
+
+form input, form textarea{
+    margin: 10px 0;
+    padding: 20px;
+    background: white;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+form button{
+    padding: 15px;
+    background: rgb(206, 219, 18);
+    color: black;
+    font-size: 18px;
+    cursor:pointer;
+    border-radius: 10px;
+    
+}
+
+.social-content{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+
+}
+
+.social-content a{
+    color: black;
+    font-size: 3rem;
+    margin: 1rem;
+    text-decoration: none;
+}
+
+.social-content a:hover{
+   
+    text-decoration: underline;
+    text-decoration-color: rgb(206, 219, 18);
+}
+
+.social-content a:focus{
+    opacity: .8;
+}
+
+.sponsors{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
