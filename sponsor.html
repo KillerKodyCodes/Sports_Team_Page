@@ -13,7 +13,7 @@
     <title>Da Shed Sponsor</title>
 </head>
 <body>
-    <nav>
+    <nav id="desktop-nav">
         <!-- Nav bar element designed to have center logo with links on either side -->
         <ul>
             <a class="navlink" href="sponsor.html">Sponsor</a>
@@ -27,14 +27,29 @@
             <a class="navlink" href="about.html">About</a>
         </ul>
 
-
-       
-
     </nav>
 
 
-    <div class="content">
-        <h1>Sponsors</h1>
+    <nav id="mobile-nav">
+        <!-- Nav bar element designed to have center logo with links on either side -->
+        <ul id="nav-wrapper">
+
+            <a href="index.html" id="logolink">
+                <img id="logo" src="images/BackLogoText1.png" alt="Logo">
+            </a>
+            <ul id="nested-nav">
+                <a class="navlink" href="sponsor.html">Sponsor</a>
+                <a class="navlink" href="rank.html">Rankings</a>
+                <a class="navlink" href="social.html">Social</a>
+                <a class="navlink" href="about.html">About</a>
+            </ul>
+
+        </ul>
+
+    </nav>
+
+    <div class="text-box">
+        <h1 class="headline">Sponsors</h1>
     </div>
 
     <div class="sponsors">
@@ -43,7 +58,7 @@
 
     <!--Email functionality can't be tested locally, must be hosted first-->
     <div class="content">
-        <form action="mail.php" method="POST">
+        <form action="mail.php" method="POST" id="sponsor-form">
             <h3>Sponsorship Inquiry Form</h3>
             <input type="text" name="name" id="name" placeholder="Your Name" required>
             <input type="text" name="email" id="email" placeholder="Email Address" required>

@@ -12,12 +12,23 @@ nav{
     padding-top: 2px;
     padding-bottom: 2px;
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    
     
 }
 
+#mobile-nav{
+    display: none;
+}
+
+
+
+
+
 #logo{
     max-width: 30rem;
+    width: 40rem;
     background-color: white;
 
 }
@@ -32,7 +43,7 @@ nav{
     opacity: .8;
 }
 
-ul {
+nav ul {
     padding: 0;
 
 }
@@ -49,7 +60,10 @@ ul a {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
+
+
 
 .content img{
     width: 100%;
@@ -69,6 +83,13 @@ ul a {
 .rank-list{
     font-size: 2rem;
     opacity: 1;
+    border: 2px solid;
+    padding: 2px 10px 2px 40px;
+    
+}
+
+.rank-list p{
+    text-decoration: underline;
 }
 
 .rank-list .injured{
@@ -80,9 +101,9 @@ ul a {
 
 .text-box{
     margin: auto;
-    width: 70%; 
-    padding: 50px;
-    word-wrap: break-word;
+    width: 100%; 
+    padding: 5px 50px;
+    word-wrap: normal;
     line-height: 2.5rem;
     word-spacing: 7px;
     
@@ -93,6 +114,18 @@ ul a {
     margin-bottom: 1rem;
     font-size: larger;
     
+}
+
+.headline{
+    text-align: center;
+    text-decoration: underline;
+    word-wrap: normal;
+}
+
+#about{
+    margin: 10px 10px;
+    border: 2px;
+    border-style: solid;
 }
 
 
@@ -137,6 +170,11 @@ form button{
     
 }
 
+#sponsor-form{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
 .social-content{
     display: flex;
     flex-direction: column;
@@ -165,4 +203,82 @@ form button{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+
+
+
+@media (max-width: 1199.98px){
+    #desktop-nav{
+        display: none;
+    }
+    #mobile-nav{
+        display: block;
+    }
+
+    #nav-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    #logo{
+       width: 100%;
+    }
+    
+    
+}
+
+
+@media (max-width: 767.98px){
+
+    ul a{
+        font-size: medium;
+    }
+
+    #logolink{
+        padding: 0px 50px;
+    }
+
+    .headline{
+        font-size: 1.5rem;
+    }
+    .text-box{
+        padding: 0;
+    }
+    .text-box p{
+        padding: 20px;
+    }
+    .rank-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #right-hand, #left-hand{
+        margin-bottom: 2rem;
+        font-size: larger;
+    }
+    .social-content a{
+        font-size: 1.5rem;
+        
+    }
+
+}
+
+
+/* accomadate iphone 4 and down device widths */
+@media (max-width: 360px){
+
+    ul a{
+        font-size: small;
+        margin: 10px;
+    }
+
+    #logolink{
+        padding: 0px 0px;
+    }
+
 }
