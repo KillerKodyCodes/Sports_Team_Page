@@ -274,6 +274,37 @@ form button{
     height: 6rem;
 }
 
+.packages-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+
+}
+
+.package{
+    width: 100%;
+    text-align: center;
+    height: 5rem;
+    border: 1px solid black;
+}
+
+#bronze{
+    background-color: #7D551B;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#silver{
+    background-color: #AAA7A7;
+}
+
+#gold{
+    background-color: #DF9410;
+    border-radius: 0px 0px 10px 10px;
+}
+
 
 
 #mobile-nav{
@@ -281,8 +312,12 @@ form button{
     
 }
 
-
-
+.wrapped-content{
+   display: flex;
+   flex-wrap: wrap;
+   flexgr
+    
+}
 
 
 @media (max-width: 1199.98px){
