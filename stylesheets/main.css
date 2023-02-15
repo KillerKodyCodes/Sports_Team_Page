@@ -280,8 +280,15 @@ form button{
     
 }
 
+
+
 .sponsors img{
     height: 6rem;
+    margin: 1rem;
+}
+
+#davisDiesel{
+    height: 15rem;
 }
 
 #mobile-nav{
