@@ -290,6 +290,9 @@ form button{
 #davisDiesel{
     height: 15rem;
 }
+#sideHustle{
+    height: 20rem;
+}
 
 #mobile-nav{
     display: none;
@@ -367,6 +370,9 @@ form button{
     #davisDiesel{
         height: 10rem;
     }
+    #sideHustle{
+        height: 15rem;
+    }
 
 }
 
@@ -385,5 +391,10 @@ form button{
     .sponsors img{
     height: 2rem;
     }
-
+    #davisDiesel{
+        height: 6rem;
+    }
+    #sideHustle{
+        height: 8rem;
+    }
 }
