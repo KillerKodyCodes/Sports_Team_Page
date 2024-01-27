@@ -27,7 +27,7 @@ nav{
 #logo{
     max-width: 25rem;
     width: 25vw;
-    background-color: white;
+    /* background-color: white; */
 
 }
 
@@ -53,23 +53,54 @@ ul a {
     color: black;
 }
 
-.gallery{
+
+#mainImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%; /* Set maximum width to 100% */
+    max-height: 100vh; /* Set maximum height to 100% of the viewport height */
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+#mainImage img {
+    max-width: 100%; /* Ensure the image inside scales down proportionally */
+    height: auto; /* Maintain the image's aspect ratio */
+}
+
+.gallery {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 15px;
 }
 
+.gallery-item {
+    max-width: 30rem;
+    min-width: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.gallery .widepicture{
-    width: 80%;
-    
+    margin-left: 5px;
+    margin-right: 5px;
+
+    margin: 2px 5px;
+    box-shadow: 0 0px 10px rgb(0, 0, 0);
+
+
 }
 
-.gallery .smallpicture{
-    width: 50%;
+.gallery-item img {
+    width: 100%;
     height: auto;
+    display: block;
 }
+
+
 
 .smallpicture-container{
     display: flex;
