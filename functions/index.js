@@ -32,10 +32,13 @@ exports.sendMail = functions.https.onRequest((req, res) => {
         const { name, email, message } = req.body;
 
         const mailOptions = {
-            from: `${name} <${email}>`,
+            from: `<${email}>`,
             to: "killerbyrd12@gmail.com",
+            cc: `${email}`,
             subject: "Sponsorship Inquiry",
-            text: `${message}`,
+            text: `Name: ${name} \n
+                    Email: ${email} \n
+                    Message: ${message}`,
         }
 
         transporter.sendMail(mailOptions, (error, info) => {
