@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-       
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+
 
     <link href="stylesheets/main.css" rel="stylesheet">
-    
+
     <title>Da Shed Sponsor</title>
 </head>
+
 <body>
     <nav id="desktop-nav">
         <!-- Nav bar element designed to have center logo with links on either side -->
@@ -53,23 +57,71 @@
     </div>
 
     <div class="sponsors">
-        <a href="https://www.facebook.com/Revolutonfitness247" target="_blank"><img src="images/revfitlogo.png" alt="revolutionfitness"></a>
+        <a href="https://www.facebook.com/Revolutonfitness247" target="_blank"><img src="images/revfitlogo.png"
+                alt="revolutionfitness"></a>
 
         <a href="https://www.homeoutlet.com/" target="_blank"><img src="images/Homeoutlet.png" alt="HomeOutlet"></a>
     </div>
-   
+
     <div class="content" id="sponsor-form">
-        
-        <form action="mail.php" method="POST" >
+        <form id="sponsorshipForm">
             <h3>Sponsorship Inquiry Form</h3>
             <input type="text" name="name" id="name" placeholder="Your Name" required>
             <input type="text" name="email" id="email" placeholder="Email Address" required>
-            <input type="text" name="phone" id="phone" placeholder="Phone Number" required>
-            <textarea id="message" name="message" rows="4" placeholder="Please type your message here."></textarea>
-            <button type="submit">Send</button>
+            <textarea id="message" name="message" rows="4" placeholder="Please type your message here."
+                required></textarea>
+            <button id="submitButton" type="submit">Send</button>
+            <p id="loadingMessage" style="display: none;">Sending your message...</p>
         </form>
     </div>
 
-    
+
+
 </body>
+
+<script>
+    document.getElementById('sponsorshipForm').addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Gather form data
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value,
+        };
+
+        // Show loading message and disable the button
+        const loadingMessage = document.getElementById('loadingMessage');
+        loadingMessage.style.display = 'block';
+
+        const submitButton = document.getElementById('submitButton');
+        submitButton.disabled = true; // Disable the button
+
+
+
+        try {
+            // Send the form data to the Firebase function
+            const response = await fetch('https://sendmail-pseul5hgea-uc.a.run.app', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.text(); // Get the response from the function
+            alert(result); // Show a success message
+        } catch (error) {
+            console.error('Error:', error);
+            alert('There was an error sending your message.');
+        } finally {
+            // Hide loading message and re-enable the button
+            loadingMessage.style.display = 'none';
+            submitButton.disabled = false; // Disable the button
+
+        }
+    });
+</script>
+
+
 </html>
