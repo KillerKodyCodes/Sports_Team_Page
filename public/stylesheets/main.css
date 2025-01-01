@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
-*{
+
+:root {
+    --yellow: #FFFF3C;
+}
+
+* {
     margin: 0;
     box-sizing: border-box;
     font-family: 'Staatliches', sans-serif;
@@ -8,14 +13,14 @@
 }
 
 
-nav{
+nav {
     padding-top: 2px;
     padding-bottom: 2px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
-    
+
+
 }
 
 
@@ -24,20 +29,20 @@ nav{
 
 
 
-#logo{
+#logo {
     max-width: 25rem;
     width: 25vw;
     /* background-color: white; */
 
 }
 
-.navlink:hover{
-    
+.navlink:hover {
+
     text-decoration: underline;
-    text-decoration-color: rgb(206, 219, 18);
+    text-decoration-color: var(--yellow);
 }
 
-.navlink:focus{
+.navlink:focus {
     opacity: .8;
 }
 
@@ -58,14 +63,19 @@ ul a {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100vw; /* Set maximum width to 100% */
-    max-height: 100vh; /* Set maximum height to 100% of the viewport height */
-    overflow: hidden; /* Hide any overflowing content */
+    max-width: 100vw;
+    /* Set maximum width to 100% */
+    max-height: 100vh;
+    /* Set maximum height to 100% of the viewport height */
+    overflow: hidden;
+    /* Hide any overflowing content */
 }
 
 #mainImage img {
-    max-width: 95%; /* Ensure the image inside scales down proportionally */
-    height: auto; /* Maintain the image's aspect ratio */
+    max-width: 95%;
+    /* Ensure the image inside scales down proportionally */
+    height: auto;
+    /* Maintain the image's aspect ratio */
 }
 
 .gallery {
@@ -94,7 +104,7 @@ ul a {
 
 }
 
-.large-gallery-item{
+.large-gallery-item {
     max-width: 100vw;
 }
 
@@ -106,22 +116,22 @@ ul a {
 
 
 
-.smallpicture-container{
+.smallpicture-container {
     display: flex;
-    
+
     align-items: center;
     padding: 0;
     width: 80%;
 }
 
-.content{
+.content {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-.content a{
+.content a {
     font-size: 1.5rem;
     margin: 2rem;
     color: black;
@@ -129,39 +139,39 @@ ul a {
 }
 
 
-.content img{
+.content img {
     width: 100%;
     margin-right: 2rem;
     margin-left: 2rem;
 }
 
-.content h1{
+.content h1 {
     text-decoration: underline;
 }
 
-.rank-container{
+.rank-container {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 2rem;
 }
 
-.rank-list{
+.rank-list {
     font-size: 2rem;
     opacity: 1;
     border: 2px solid;
     padding: 2px 10px 2px 40px;
-    
+
 }
 
-.rank-list p{
+.rank-list p {
     text-decoration: underline;
 }
 
-.rank-list .injured{
+.rank-list .injured {
     list-style: none;
 }
 
-#upcoming-matches{
+#upcoming-matches {
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
@@ -169,44 +179,44 @@ ul a {
     padding: 1rem;
 }
 
-.match{
+.match {
     list-style-type: none;
     margin: .5rem;
 }
 
 
-.text-box{
+.text-box {
     margin: auto;
-    width: 100%; 
+    width: 100%;
     padding: 5px 50px;
     word-wrap: normal;
     line-height: 2.5rem;
     word-spacing: 7px;
-    
+
 }
 
-.text-box p{
+.text-box p {
     text-align: center;
     margin-bottom: 1rem;
     font-size: larger;
-    
-    
+
+
 }
 
-#sponsorDetails{
-  word-spacing: normal;
-   
+#sponsorDetails {
+    word-spacing: normal;
+
 }
 
 
 
-.headline{
+.headline {
     text-align: center;
     text-decoration: underline;
     word-wrap: normal;
 }
 
-#about{
+#about {
     margin: 10px 10px;
     border: 2px;
     border-style: solid;
@@ -218,7 +228,7 @@ ul a {
 
 
 
-#affiliates{
+#affiliates {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -226,20 +236,20 @@ ul a {
     margin-bottom: 2rem;
 }
 
-#affiliates ul{
+#affiliates ul {
     border: black solid;
     padding: 2rem;
 }
 
-#affiliates li{
+#affiliates li {
     font-size: large;
     list-style-type: none;
 }
 
 
 
-form{
-    background:white;
+form {
+    background: white;
     display: flex;
     flex-direction: column;
     margin-top: 4rem;
@@ -249,17 +259,18 @@ form{
     border: 1px solid;
     border-radius: 10px;
     text-align: center;
-    
+
 }
 
-form h3{
+form h3 {
     color: black;
-    font-size:larger;
+    font-size: larger;
     margin-bottom: 20px;
-    
+
 }
 
-form input, form textarea{
+form input,
+form textarea {
     margin: 10px 0;
     padding: 20px;
     background: white;
@@ -267,29 +278,29 @@ form input, form textarea{
     border-radius: 10px;
 }
 
-form button{
+form button {
     padding: 15px;
-    background: rgb(206, 219, 18);
+    background: var(--yellow);
     color: black;
     font-size: 18px;
-    cursor:pointer;
+    cursor: pointer;
     border-radius: 10px;
-    
+
 }
 
-#sponsor-form{
+#sponsor-form {
     margin-top: 1rem;
     margin-bottom: 2rem;
 }
 
-.social-content{
+.social-content {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
 
 }
 
-.social-content a{
+.social-content a {
     color: black;
     font-size: 2rem;
     margin: 1rem;
@@ -297,115 +308,129 @@ form button{
     text-align: center;
 }
 
-.social-content a:hover{
-   
+.social-content a:hover {
+
     text-decoration: underline;
-    text-decoration-color: rgb(206, 219, 18);
+    text-decoration-color: var(--yellow);
 }
 
-.social-content a:focus{
+.social-content a:focus {
     opacity: .8;
 }
 
-.sponsors{
+.sponsors {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 2rem;
-    
+
 }
 
 
 
-.sponsors img{
+.sponsors img {
     height: 6rem;
     margin: 1rem;
 }
 
-#davisDiesel{
+#davisDiesel {
     height: 15rem;
 }
-#sideHustle{
+
+#sideHustle {
     height: 25rem;
 }
 
-#mobile-nav{
+#mobile-nav {
     display: none;
-    
+
 }
 
 
 
 
-@media (max-width: 1199.98px){
-    #desktop-nav{
+@media (max-width: 1199.98px) {
+    #desktop-nav {
         display: none;
     }
-    #mobile-nav{
+
+    #mobile-nav {
         display: block;
     }
 
-    #nav-wrapper{
+    #nav-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        
+
     }
-    #logo{
-       width: 15rem;
+
+    #logo {
+        width: 15rem;
     }
-    .sponsors img{
-    height: 5rem;
+
+    .sponsors img {
+        height: 5rem;
     }
-    
-    
+
+
 }
 
 
-@media (max-width: 767.98px){
+@media (max-width: 767.98px) {
 
-    ul a{
+    ul a {
         font-size: medium;
     }
 
-    #logolink{
+    #logolink {
         padding: 0px 50px;
     }
-    #logo{
+
+    #logo {
         width: 12rem;
-     }
-    .headline{
+    }
+
+    .headline {
         font-size: 1.5rem;
     }
-    .text-box{
+
+    .text-box {
         padding: 0;
     }
-    .text-box p{
+
+    .text-box p {
         padding: 20px;
     }
-    .rank-container{
+
+    .rank-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    #right-hand, #left-hand{
+    #right-hand,
+    #left-hand {
         margin-bottom: 2rem;
         font-size: larger;
     }
-    .social-content a{
+
+    .social-content a {
         font-size: 1.5rem;
-        
+
     }
-    .sponsors img{
-    height: 3.5rem;
+
+    .sponsors img {
+        height: 3.5rem;
     }
-    #davisDiesel{
+
+    #davisDiesel {
         height: 10rem;
     }
-    #sideHustle{
+
+    #sideHustle {
         height: 15rem;
     }
 
@@ -413,23 +438,37 @@ form button{
 
 
 /* accomadate iphone 4 and down device widths */
-@media (max-width: 360px){
+@media (max-width: 360px) {
 
-    ul a{
+    ul a {
         font-size: small;
         margin: 10px;
     }
 
-    #logolink{
+    #logolink {
         padding: 0px 0px;
     }
-    .sponsors img{
-    height: 2rem;
+
+    .sponsors img {
+        height: 2rem;
     }
-    #davisDiesel{
+
+    #davisDiesel {
         height: 6rem;
     }
-    #sideHustle{
+
+    #sideHustle {
         height: 8rem;
     }
+}
+
+.rank-list a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.rank-list a:hover {
+    /* text-decoration-color: var(--yellow); */
+
+    text-decoration: underline;
 }
