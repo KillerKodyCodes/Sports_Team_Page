@@ -14,8 +14,24 @@ const functions = require('firebase-functions');
 
 const cors = require("cors");
 
-// Initialize the CORS middleware
-const corsMiddleware = cors({ origin: true });
+// Initialize the CORS middleware to only allow browser requests from the actual website. 
+const allowedOrigins = [
+    "https://dsarmwrestling.com",
+    "https://da-shed-armwrestling.web.app",
+    "https://da-shed-armwrestling.firebaseapp.com"
+]
+const corsMiddleware = cors({
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            // Allow requests with a matching origin or no origin (e.g., server-side requests)
+            callback(null, true);
+        } else {
+            // Block requests from disallowed origins
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    methods: ["POST"], // Specify allowed methods
+});
 
 
 const transporter = nodemailer.createTransport({
@@ -30,6 +46,9 @@ exports.sendMail = functions.https.onRequest((req, res) => {
     corsMiddleware(req, res, () => {
 
         const { name, email, message } = req.body;
+        if (!name || !email || !message) {
+            res.status(500).send("Error sending message");
+        }
 
         const mailOptions = {
             from: `<${email}>`,
