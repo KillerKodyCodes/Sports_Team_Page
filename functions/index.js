@@ -6,7 +6,7 @@
  *
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
-
+require('dotenv').config();
 const { onRequest } = require("firebase-functions/v2/https");
 const logger = require("firebase-functions/logger");
 const nodemailer = require('nodemailer');
@@ -18,7 +18,8 @@ const cors = require("cors");
 const allowedOrigins = [
     "https://dsarmwrestling.com",
     "https://da-shed-armwrestling.web.app",
-    "https://da-shed-armwrestling.firebaseapp.com"
+    "https://da-shed-armwrestling.firebaseapp.com",
+    "http://127.0.0.1:5000"
 ]
 const corsMiddleware = cors({
     origin: (origin, callback) => {
@@ -33,12 +34,12 @@ const corsMiddleware = cors({
     methods: ["POST"], // Specify allowed methods
 });
 
-
+const { EMAIL_USER, EMAIL_PASS } = process.env;
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'killerbyrd12@gmail.com',
-        pass: 'brsw kazj pxsy kvvq'
+        user: `${EMAIL_USER}`,
+        pass: `${EMAIL_PASS}`
     }
 });
 
@@ -64,7 +65,9 @@ exports.sendMail = functions.https.onRequest((req, res) => {
             if (error) {
                 return res.status(500).send(error.toString());
             }
-            return res.status(200).send("Message Sent");
+            res.status(200).send("Message Sent");
+            return;
         });
     });
 })
+

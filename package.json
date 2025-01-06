@@ -4,13 +4,14 @@
   "main": "index.js",
   "scripts": {
     "deploy": "firebase deploy",
-    "dev:": "firebase emulators:start"
+    "dev": "firebase emulators:start"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7"
   }
 }
