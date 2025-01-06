@@ -47,7 +47,7 @@ exports.sendMail = functions.https.onRequest((req, res) => {
 
         const { name, email, message } = req.body;
         if (!name || !email || !message) {
-            res.status(500).send("Error sending message");
+            return res.status(500).send("Error sending message");
         }
 
         const mailOptions = {
@@ -64,7 +64,7 @@ exports.sendMail = functions.https.onRequest((req, res) => {
             if (error) {
                 return res.status(500).send(error.toString());
             }
-            res.status(200).send("Message Sent");
+            return res.status(200).send("Message Sent");
         });
     });
 })
