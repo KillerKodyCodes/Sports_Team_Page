@@ -97,11 +97,17 @@
         const submitButton = document.getElementById('submitButton');
         submitButton.disabled = true; // Disable the button
 
+        // Determine the URL based on the environment
+        const isTest = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        const functionUrl = isTest
+            ? 'http://127.0.0.1:5001/da-shed-armwrestling/us-central1/sendMail'
+            : 'https://us-central1-da-shed-armwrestling.cloudfunctions.net/sendMail'
+            ;
 
 
         try {
             // Send the form data to the Firebase function
-            const response = await fetch('https://sendmail-pseul5hgea-uc.a.run.app', {
+            const response = await fetch(functionUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
