@@ -1,5 +1,15 @@
 {
   "hosting": {
+    "rewrites": [
+      {
+        "source": "/api/sendMail",
+        "function": {
+          "functionId": "sendMail",
+          "region": "us-central1",
+          "pintag": true
+        }
+      }
+    ],
     "public": "public",
     "ignore": [
       "firebase.json",
