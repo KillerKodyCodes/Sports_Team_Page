@@ -62,65 +62,6 @@
                 alt="revolutionfitness"></a>
 
         <a href="https://www.homeoutlet.com/" target="_blank"><img src="images/Homeoutlet.png" alt="HomeOutlet"></a>
-    </div>
-
-    <div class="content" id="sponsor-form">
-        <form id="sponsorshipForm">
-            <h3>Sponsorship Inquiry Form</h3>
-            <input type="text" name="name" id="name" placeholder="Your Name" required>
-            <input type="text" name="email" id="email" placeholder="Email Address" required>
-            <textarea id="message" name="message" rows="4" placeholder="Please type your message here."
-                required></textarea>
-            <button id="submitButton" type="submit">Send</button>
-            <p id="loadingMessage" style="display: none;">Sending your message...</p>
-        </form>
-    </div>
-
-
 
 </body>
-
-<script>
-    document.getElementById('sponsorshipForm').addEventListener('submit', async (event) => {
-        event.preventDefault(); // Prevent the default form submission
-
-        // Gather form data
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value,
-        };
-
-        // Show loading message and disable the button
-        const loadingMessage = document.getElementById('loadingMessage');
-        loadingMessage.style.display = 'block';
-
-        const submitButton = document.getElementById('submitButton');
-        submitButton.disabled = true; // Disable the button
-
-        try {
-            // Send the form data to the Firebase function
-            const response = await fetch('/api/sendMail', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            const result = await response.text(); // Get the response from the function
-            alert(result); // Show a success message
-        } catch (error) {
-            console.error('Error:', error);
-            alert('There was an error sending your message.');
-        } finally {
-            // Hide loading message and re-enable the button
-            loadingMessage.style.display = 'none';
-            submitButton.disabled = false; // Disable the button
-
-        }
-    });
-</script>
-
-
 </html>
